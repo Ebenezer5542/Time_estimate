@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Estimate App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #f8faff; }
+        .app-card {
+            max-width: 600px; margin: auto; border-radius: 15px;
+            background: white; padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px);} to { opacity: 1; transform: translateY(0);} }
+        .btn-primary {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border: none; transition: 0.3s;
+        }
+        .btn-primary:hover { transform: scale(1.03); }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="app-card">
+        <h2 class="text-center text-primary mb-3">
+            <i class="fa-solid fa-clock"></i> Time Estimate App
+        </h2>
+        <p class="text-center text-muted">Plan smarter. Arrive on time.</p>
+
+        {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div>
+        {% endif %}
+
+        <form method="POST">
+            <div class="mb-3">
+                <label for="dep_time" class="form-label">Departure Time:</label>
+                <input type="text" class="form-control" id="dep_time" name="dep_time"
+                       placeholder="Select time"
+                       value="{{ request.form.dep_time if request.method == 'POST' else '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="trans_mode" class="form-label">Transport Mode:</label>
+                <select id="trans_mode" name="trans_mode" class="form-select">
+                    <option value="" disabled {% if not request.form.get('trans_mode') %}selected{% endif %}>Select mode</option>
+                    {% for mode in ["Trotro", "Taxi", "Private Vehicle", "Walking"] %}
+                        <option {% if request.form.get('trans_mode') == mode %}selected{% endif %}>{{ mode }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="home_location" class="form-label">Home Location:</label>
+                <select id="home_location" name="home_location" class="form-select">
+                    <option value="" disabled {% if not request.form.get('home_location') %}selected{% endif %}>Select home location</option>
+                    {% for town in towns %}
+                        <option {% if request.form.get('home_location') == town %}selected{% endif %}>{{ town }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="office_location" class="form-label">Office Location:</label>
+                <select id="office_location" name="office_location" class="form-select">
+                    <option value="" disabled {% if not request.form.get('office_location') %}selected{% endif %}>Select office location</option>
+                    {% for town in towns %}
+                        <option {% if request.form.get('office_location') == town %}selected{% endif %}>{{ town }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="fa-solid fa-route"></i> Predict Arrival Time
+            </button>
+        </form>
+
+        {% if arrival_time %}
+        <div class="alert alert-success mt-4 text-center">
+            <h4>Estimated Arrival Time:</h4>
+            <p class="fs-4">{{ arrival_time }}</p>
+            <p>🚗 Safe travels!</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    flatpickr("#dep_time", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+    });
+</script>
+</body>
+</html>
