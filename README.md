@@ -1,5 +1,8 @@
 # Accra Commute Estimator
 
+
+🚀 <a href="https://time-estimate.onrender.com" target="_blank">Live Demo</a>
+
 ## Overview
 The **Accra Commute Estimator** is a Flask-based web application that predicts the estimated arrival time for commuters in Accra based on:
 - Departure time (via a modern time picker)
@@ -7,7 +10,6 @@ The **Accra Commute Estimator** is a Flask-based web application that predicts t
 - Home location
 - Office location
 
-🔗 **Try it here:** [Live App on Render](https://time-estimate.onrender.com)
 The application uses a trained machine learning model to make predictions based on historical commute data.
 
 ## Features
