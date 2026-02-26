@@ -23,7 +23,7 @@ The application uses a trained machine learning model to make predictions based 
 
 ### **1. Clone the Repository**
 ```sh
-git clone https://github.com/yourusername/time_estimate.git
+git clone https://github.com/Ebenezer5542/time_estimate.git
 cd time_estimate
 ```
 
@@ -90,4 +90,4 @@ This project is open-source.
 ## Contact
 For any questions or contributions, feel free to reach out:
 - **Email:** ohenebengebenezer10@gmail.com
-- **GitHub:** [Ebenezer5542](https://github.com/Ebenezer5542)
+- **LinkedIn:** [Ebenezer5542](www.linkedin.com/in/ohenebeng-ebenezer-0190b421a)
