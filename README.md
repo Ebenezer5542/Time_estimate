@@ -1,4 +1,4 @@
-# 🕐 TravelCast — Commute Arrival Predictor
+# 🕐 Time Estimator — Commute Arrival Predictor
 
 > A Flask-based machine learning web app that predicts your estimated arrival time based on departure time, transport mode, and location — built for commuters in Accra, Ghana.
 
