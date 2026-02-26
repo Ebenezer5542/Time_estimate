@@ -8,7 +8,7 @@
 
 ## 📌 Overview
 
-TravelCast is an end-to-end machine learning project that takes a commuter's inputs and returns a predicted arrival time. It was built as a **proof-of-concept prototype** to demonstrate a complete ML workflow — from data collection to cloud deployment.
+Time Estimator is an end-to-end machine learning project that takes a commuter's inputs and returns a predicted arrival time. It was built as a **proof-of-concept prototype** to demonstrate a complete ML workflow — from data collection to cloud deployment.
 
 > ⚠️ **Note:** The dataset was collected from a small group of volunteers via SurveyCTO, so predictions are experimental rather than production-grade. The primary goal of this project is to showcase the full pipeline: data collection → model training → Flask integration → deployment.
 
