@@ -1,93 +1,166 @@
-# Accra Commute Estimator
+🔗 Live Demo: https://time-estimate.onrender.com
 
+📌 Overview
 
-🔗 **Try it here:** [Live App on Render](https://time-estimate.onrender.com)
+The Accra Commute Estimator is a Flask-based web application that predicts estimated arrival time for commuters in Accra based on:
 
-## Overview
-The **Accra Commute Estimator** is a Flask-based web application that predicts the estimated arrival time for commuters in Accra based on:
-- Departure time (via a modern time picker)
-- Mode of transport
-- Home location
-- Office location
+Departure time
 
-The application uses a trained machine learning model to make predictions based on historical commute data.
+Mode of transport
 
-## Features
-- **User-Friendly UI:** Modern Bootstrap interface with a responsive card layout and iconography.
-- **Smart Time Input:** JavaScript-powered time picker (Flatpickr) for easy selection.
-- **Real-Time Prediction:** Get an estimated time of arrival instantly after submitting details.
-- **Persistent Form Values:** All inputs remain visible after prediction for easy adjustments.
-- **Model Integration:** Uses a pre-trained model to make accurate commute time predictions.
+Home location
 
-## Installation
+Office location
 
-### **1. Clone the Repository**
-```sh
+⚠️ Note:
+This project was built as a machine learning mock test / prototype.
+The dataset used was relatively small and collected from friends using SurveyCTO, so predictions are experimental and not production-grade.
+
+The focus of the project was to demonstrate:
+
+End-to-end ML workflow
+
+Model serialization and deployment
+
+Flask integration
+
+UI/UX polish
+
+Cloud deployment (Render)
+
+🧠 Machine Learning Details
+
+Data collected manually via SurveyCTO
+
+Small dataset (experimental scale)
+
+Preprocessed using Pandas
+
+Model trained using Scikit-learn
+
+Saved using joblib as:
+
+time_estimate.pkl
+
+Because of the limited dataset size, the model serves as a proof-of-concept rather than a fully optimized predictive system.
+
+✨ Features
+
+Modern responsive UI (Bootstrap 5)
+
+Flatpickr time selection
+
+Persistent form inputs after submission
+
+Clean prediction display card
+
+LinkedIn footer branding
+
+Deployed on Render
+
+🛠 Tech Stack
+
+Backend:
+
+Flask
+
+Pandas
+
+Scikit-learn
+
+Joblib
+
+Frontend:
+
+Bootstrap 5 (CDN)
+
+Flatpickr (CDN)
+
+Font Awesome (CDN)
+
+Deployment:
+
+Render
+
+Data Collection:
+
+SurveyCTO
+
+🚀 Running Locally
+1️⃣ Clone Repository
 git clone https://github.com/Ebenezer5542/time_estimate.git
 cd time_estimate
-```
+2️⃣ Create Virtual Environment
 
-### **2. Create Virtual Environment (Recommended)**
-```sh
+Windows:
+
 python -m venv venv
-source venv/bin/activate   # On Mac/Linux
-venv\Scripts\activate      # On Windows
-```
+venv\Scripts\activate
 
-### **3. Install Dependencies**
-```sh
+Mac/Linux:
+
+python -m venv venv
+source venv/bin/activate
+3️⃣ Install Dependencies
 pip install -r requirements.txt
-```
-
-## Running the App Locally
-Run the following command to start the Flask app:
-```sh
+4️⃣ Run App
 python app.py
-```
-Open your browser and visit:
-```
-http://127.0.0.1:5000/
-```
 
-## Deployment
-You can deploy this app on:
-- **Render** (recommended for quick Flask deployment)
-- **Heroku** (requires a `Procfile`)
-- **PythonAnywhere**
-- **Any VPS or cloud hosting** that supports Python/Flask
+App will run on:
 
-## File Structure
-```
-📂 time_estimate
-│-- app.py               # Main Flask app
-│-- templates/
-│   └── index.html        # Modern Bootstrap + Flatpickr UI
-│-- static/               # Static assets (optional)
-│-- time_estimate.pkl     # Trained machine learning model
-│-- towns.csv             # Town names and corresponding codes
-│-- requirements.txt      # Dependencies
-│-- README.md             # Project documentation
-```
+http://127.0.0.1:5000
+📂 Updated File Structure
+📂 TIME_ESTIMATE
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── time_estimate.pkl
+├── towns.csv
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── linkedin-svgrepo-com.svg
+│
+└── model building/
+    ├── Model Building.ipynb
+    └── my_data.csv
+🔍 What This Project Demonstrates
 
-## Requirements
-- Flask
-- Pandas
-- Joblib
-- Scikit-learn
-- Bootstrap 5 (CDN in HTML)
-- Flatpickr (CDN in HTML)
-- Font Awesome (CDN in HTML)
+Basic ML pipeline creation
 
-## Future Improvements
-- Integrate **real-time traffic data** for more accurate predictions.
-- Add **summary cards** showing all selected inputs alongside results.
-- Support **multiple cities** beyond Accra.
-- Add **multi-step form flow** for a more app-like experience.
+Feature preprocessing
 
-## License
-This project is open-source.
+Model persistence
 
-## Contact
-For any questions or contributions, feel free to reach out:
-- **Email:** ohenebengebenezer10@gmail.com
-- **LinkedIn:** [Ebenezer5542](www.linkedin.com/in/ohenebeng-ebenezer-0190b421a)
+Flask app integration with ML model
+
+Clean UI integration
+
+Deployment workflow
+
+Git version control management
+
+📈 Future Improvements
+
+Collect larger, more representative dataset
+
+Add traffic-aware features
+
+Improve feature engineering
+
+Implement model evaluation metrics display
+
+Add analytics dashboard
+
+Expand beyond Accra
+
+📬 Contact
+
+Ohenebeng Ebenezer
+
+📧 ohenebengebenezer10@gmail.com
+
+🔗 https://www.linkedin.com/in/ohenebeng-ebenezer-0190b421a
